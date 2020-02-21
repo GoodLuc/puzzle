@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Media Monks</title>
+    <meta name="description" content="Tradition + Technology">
+    <meta name="author" content="Lucas Randazzo">
+
+    <link rel="stylesheet" href="styles/puzzle.css">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1>Discover your inner strength</h1>
+      <div id="board"></div>
+      <div id="score">
+        <h2>Time: <span id="timer">00:00</span></h2>
+        <h2>Moves: <span id="moves">0</span></h2>
+        <h2 id="message"></h2>
+      </div>
+    </div>
+    
+    <script src="scripts/confetti.js"></script>
+    <script>startConfetti();</script>
+    <script src="scripts/game.js"></script>
+  </body>
+
+</html>

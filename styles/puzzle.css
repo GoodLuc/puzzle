@@ -1,0 +1,247 @@
+body {
+  background: #1e1e1e;
+  color: white;
+  font-family: "Helvetica", Arial, sans-serif;
+  min-width: 520px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container h1 {
+  text-align: center;
+  width: 100%;
+}
+.container h2 {
+  font-weight: 200;
+}
+@media screen and (max-width: 777px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container #score {
+    width: 500px;
+    position: relative;
+  }
+  .container #message {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+#score {
+  background: #2d2d2d;
+  color: white;
+  padding: 20px;
+  width: 250px;
+  box-sizing: border-box;
+}
+#score.won {
+  color: #20df3d;
+}
+
+#board {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("../img/monks.jpg");
+  background-size: 500px 500px;
+}
+#board figure {
+  width: 125px;
+  height: 125px;
+  background-image: url("../img/monks.jpg");
+  background-size: 500px 500px;
+  position: absolute;
+  transition: all 0.25s ease-in-out;
+  padding: 0;
+  margin: 0;
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+#board figure.shuffling {
+  transition: all 0.1s linear;
+}
+#board figure:hover {
+  border-style: dashed;
+  cursor: pointer;
+  filter: brightness(1.75);
+}
+#board.won {
+  background: url("../img/monks.jpg");
+  animation-name: brightWon;
+  animation-duration: 1.1s;
+}
+#board.won figure {
+  display: none;
+}
+
+[data-spos="1"] {
+  background-position: 0 0;
+}
+
+[data-spos="2"] {
+  background-position: 33.33% 0;
+}
+
+[data-spos="3"] {
+  background-position: 66.66% 0;
+}
+
+[data-spos="4"] {
+  background-position: 100% 0;
+}
+
+[data-spos="5"] {
+  background-position: 0 33.33%;
+}
+
+[data-spos="6"] {
+  background-position: 33.33% 33.33%;
+}
+
+[data-spos="7"] {
+  background-position: 66.66% 33.33%;
+}
+
+[data-spos="8"] {
+  background-position: 100% 33.33%;
+}
+
+[data-spos="9"] {
+  background-position: 0 66.66%;
+}
+
+[data-spos="10"] {
+  background-position: 33.33% 66.66%;
+}
+
+[data-spos="11"] {
+  background-position: 66.66% 66.66%;
+}
+
+[data-spos="12"] {
+  background-position: 100% 66.66%;
+}
+
+[data-spos="13"] {
+  background-position: 0 100%;
+}
+
+[data-spos="14"] {
+  background-position: 33.33% 100%;
+}
+
+[data-spos="15"] {
+  background-position: 66.66% 100%;
+}
+
+[data-apos="1"] {
+  top: 0;
+  left: 0;
+}
+
+[data-apos="2"] {
+  top: 0;
+  left: 125px;
+}
+
+[data-apos="3"] {
+  top: 0;
+  left: 250px;
+}
+
+[data-apos="4"] {
+  top: 0;
+  left: 375px;
+}
+
+[data-apos="5"] {
+  top: 125px;
+  left: 0;
+}
+
+[data-apos="6"] {
+  top: 125px;
+  left: 125px;
+}
+
+[data-apos="7"] {
+  top: 125px;
+  left: 250px;
+}
+
+[data-apos="8"] {
+  top: 125px;
+  left: 375px;
+}
+
+[data-apos="9"] {
+  top: 250px;
+  left: 0;
+}
+
+[data-apos="10"] {
+  top: 250px;
+  left: 125px;
+}
+
+[data-apos="11"] {
+  top: 250px;
+  left: 250px;
+}
+
+[data-apos="12"] {
+  top: 250px;
+  left: 375px;
+}
+
+[data-apos="13"] {
+  top: 375px;
+  left: 0;
+}
+
+[data-apos="14"] {
+  top: 375px;
+  left: 125px;
+}
+
+[data-apos="15"] {
+  top: 375px;
+  left: 250px;
+}
+
+[data-apos="16"] {
+  top: 375px;
+  left: 375px;
+}
+
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none !important;
+}
+#confetti-canvas.go {
+  display: block !important;
+}
+
+@keyframes brightWon {
+  from {
+    filter: brightness(1.75);
+  }
+  to {
+    filter: brightness(1);
+  }
+}
+
+/*# sourceMappingURL=puzzle.css.map */
